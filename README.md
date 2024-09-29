@@ -48,8 +48,51 @@ This is a simple, recursive web crawler written in Go. The crawler starts at a g
 
 - Example Output
 
+            ```bash
+                    Page Title (0) - http://example.com
+                    Link Text 1 (1) - http://example.com/link1
+                    Link Text 2 (1) - http://example.com/link2
+                        Sub Link Text (2) - http://example.com/sublink
+                        
+
+### Customization
+
+-   **Max Depth**: You can change the depth limit by modifying the MaxDepth variable in the code.
+-	**Logging**: Set the logging level by modifying the log.SetPriorityString function. The levels are debug, info, warn, error, etc.
+
+### Code Overview
+
+**Link Struct**
+
+- Stores the URL, text, and depth for each hyperlink.
+- Includes a Valid() method to filter out invalid links (e.g., empty or JavaScript links).
+
+**recurDownloader()**
+
+- Recursively downloads pages and follows the links found, up to the MaxDepth.
+
+**downloader()**
+
+- Downloads a page from the given URL using http.Get() and handles HTTP errors.
+
+### Logging
+
+This project uses the loglevel package for logging. You can set the log level to control the verbosity of the output:
+
     ```bash
-    Page Title (0) - http://example.com
-    Link Text 1 (1) - http://example.com/link1
-    Link Text 2 (1) - http://example.com/link2
-        Sub Link Text (2) - http://example.com/sublink
+    log.SetPriorityString("info")  // Set logging level to "info"
+
+### Known Issues
+
+- Some websites may block crawlers.
+- Large websites with too many links or deep page structures can cause the crawler to take a long time to complete.
+
+### Contributing
+
+Feel free to open issues or submit pull requests. Contributions are welcome!
+
+### Important Tips:
+1. **Ensure there is no indentation** for headings and that they are preceded by a blank line.
+2. **Double-check your rendering environment**, as some environments might have slight differences in markdown interpretation. If this still doesn't work, try running it on a platform like GitHub or another Markdown viewer.
+
+If the problem persists, let me know what platform you are trying to render this on, and I can help adjust for that!
