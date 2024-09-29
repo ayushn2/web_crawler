@@ -31,7 +31,6 @@ This is a simple, recursive web crawler written in Go. The crawler starts at a g
 ### Usage
 
 - To run the crawler, pass a URL as an argument:
-
     ```bash
     go run main.go http://example.com
 
@@ -47,8 +46,7 @@ This is a simple, recursive web crawler written in Go. The crawler starts at a g
 -	MaxDepth: The maximum depth to crawl (default is 2).
 
 - Example Output
-
-            ```bash
+    ```bash
                     Page Title (0) - http://example.com
                     Link Text 1 (1) - http://example.com/link1
                     Link Text 2 (1) - http://example.com/link2
@@ -74,13 +72,6 @@ This is a simple, recursive web crawler written in Go. The crawler starts at a g
 **downloader()**
 
 - Downloads a page from the given URL using http.Get() and handles HTTP errors.
-
-### Logging
-
-This project uses the loglevel package for logging. You can set the log level to control the verbosity of the output:
-
-    ```bash
-    log.SetPriorityString("info")  // Set logging level to "info"
 
 ### Known Issues
 
